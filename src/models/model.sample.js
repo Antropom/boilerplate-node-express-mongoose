@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const testMessage = new mongoose.Schema({
+const messageSchema = new mongoose.Schema({
   message: {
     type: String,
     required: true,
@@ -12,11 +12,13 @@ const testMessage = new mongoose.Schema({
   },
 })
 
-testMessage.methods.log = function () {
-  const messageLog = this.optionnal
-    ? this.message + ' optionnal : ' + this.optionnal
+messageSchema.methods.log = function () {
+  const messageLog = this.optional
+    ? this.message + ' optional : ' + this.optional
     : this.message
   console.log(messageLog)
 }
 
-const MessageLog = mongoose.model('MessageLog', testMessage)
+const Message = mongoose.model('Message', messageSchema)
+
+module.exports = Message

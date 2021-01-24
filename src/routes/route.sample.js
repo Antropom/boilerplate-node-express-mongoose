@@ -1,8 +1,15 @@
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
+const {
+  findAll,
+  findOne,
+  search,
+  create,
+} = require('../controllers/controller.sample')
 
-router.get('/', function (req, res) {
-  res.send('Hello World')
-})
+router.get('/', findAll)
+router.get('/:id', findOne)
+router.get('/search/:query', search)
+router.post('/', create)
 
 module.exports = router

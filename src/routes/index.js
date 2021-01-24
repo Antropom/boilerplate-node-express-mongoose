@@ -1,7 +1,7 @@
 const routeSample = require('./route.sample')
 
 const init = (app) => {
-  app.use('/', routeSample)
+  app.use('/messages', routeSample)
 }
 
 module.exports = init
