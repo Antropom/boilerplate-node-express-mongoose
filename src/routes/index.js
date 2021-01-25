@@ -1,7 +1,7 @@
+const express = require('express')
 const routeSample = require('./route.sample')
+const router = express.Router()
 
-const init = (app) => {
-  app.use('/messages', routeSample)
-}
+router.use('/messages', routeSample)
 
-module.exports = init
+module.exports = router
